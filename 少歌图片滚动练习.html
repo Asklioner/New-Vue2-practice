@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+
+    <div id="app">
+       <h1>无法预测的命运舞台</h1>
+       <button  @click="index--"   v-show="index>0" >上一页</button> <br>
+       <img v-bind:src="list[index]" height="300" width="300">
+       <button v-show="index<list.length - 1" @click="index++">下一页</button>
+    </div>
+       
+    <script>
+        const app = new Vue({
+            el:"#app",
+            data: {
+                list:[
+                    './imgs/20200602162529_pjjdg.png',
+                    './imgs/C.jpg',
+                    './imgs/R-C.jpg',
+                    './imgs/R.jpg'
+                ],
+                index:0
+            }
+        })
+    </script>
+</body>
+</html>

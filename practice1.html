@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{msg}}     <br>
+        {{msg2}}    <br>
+        <div v-html="msg3"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el:"#app",
+            data:{
+                msg:'我超级喜欢你',
+                msg2:'Posotion zero!',
+                msg3:'<a href="https://www.bilibili.com/video/BV1HV4y1a7n4?p=8&vd_source=f0f0f774290a289a3173f57c433f0f9c">哔哩哔哩</a>'
+            }
+        })
+    </script>
+</body>
+</html>

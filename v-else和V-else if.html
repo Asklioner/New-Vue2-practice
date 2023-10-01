@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+        <h1>{{msg}}</h1>
+        <p v-if="sex===1">性别：男</p>
+        <p v-else>性别：女</p>
+        <hr>
+        <p v-if="score>=90">成绩评定A:奖励一台电脑</p>
+        <p v-else-if="score>=70">成绩评定B:奖励周末旅行</p>
+        <p v-else-if="score>=60">成绩评定C:奖励零食大礼包</p>
+        <p v-else>成绩评定D:惩罚一周不许玩原神</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el:"#app",
+            data:{
+               msg:'原神',
+               sex:1,
+               score:59
+            }
+        })
+    </script>
+</body>
+</html>

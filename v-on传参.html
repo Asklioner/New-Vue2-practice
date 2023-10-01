@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+    <style>
+        .box {
+            width: 15em;
+            border: 1px solid #333;
+            box-shadow: 8px 8px 5px #444;
+            padding: 8px 12px;
+            background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);
+        }
+    </style>
+
+    <div id="app">
+        <div class="box">
+            <h2>因而闪耀，无法触及！</h2>
+            <h3>闪耀售卖机</h3>
+            <button @click="buy(5)">恋哥哥10元</button>
+            <button @click="buy(5)">小光5元</button>
+        </div>
+        <p>长颈鹿燃料剩余：{{money}}</p>
+    </div>
+       
+    <script>
+        const app = new Vue({
+            el:"#app",
+            data: {
+                money:1000
+            },
+            methods: {
+                buy(price){
+                    this.money = this.money-price
+                }
+            }
+        })
+    </script>
+</body>
+</html>
