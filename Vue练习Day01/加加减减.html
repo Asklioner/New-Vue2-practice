@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js" type="text/javascript" charset="UTF-8"></script>
+</head>
+<body>
+
+
+    <style>
+        /* 添加样式以使列表项水平排列 */
+        .list-item {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* 控制项之间的间距 */
+        }
+
+        /* 自定义删除按钮样式 */
+        .delete-button {
+            background-color: pink;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+    <div id="app">
+       <ul  v-for="(item,index) in list" class="list-item">
+            <li  >{{item}}</li>  
+             <button class="delete-button" @click="del(index)">删除</button>
+       </ul>
+       <button @click="run">生成</button>
+    </div>
+       
+    <script>
+        const app = new Vue({
+            el:"#app",
+            data: {
+               list:[
+                1,5,3
+               ]
+            },
+            methods: {
+              run(){
+                var a = Math.floor(Math.random()*21)
+                this.list.push(a)
+              },
+              del(index){
+                <!--filter()创建一个新数组，不改变原来的数组, this.list=this.list.filter(item=>item!==a)-->
+                this.list.splice(index,1)
+              }
+            }
+        })
+    </script>
+</body>
+</html>
